@@ -2,10 +2,10 @@
 // SPDX-License-Identifier: Apache-2.0
 import React, { useContext, useLayoutEffect, useRef } from 'react';
 import clsx from 'clsx';
-import { AppLayoutContext } from '../../../app-layout/visual-refresh/context';
+import { AppLayoutContext } from '../app-layout/visual-refresh/context';
 import { ContentLayoutProps } from './interfaces';
-import { useContainerQuery } from '../../hooks/container-queries';
-import { useVisualRefresh } from '../../hooks/use-visual-mode';
+import { useContainerQuery } from '../internal/hooks/container-queries';
+import { useVisualRefresh } from '../internal/hooks/use-visual-mode';
 import styles from './styles.css.js';
 
 export { ContentLayoutProps };
