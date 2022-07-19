@@ -34,13 +34,19 @@
     &.variant-normal,
     &.variant-primary {
       background-color: awsui.$color-background-dropdown-item-hover;
-      border-color: awsui.$color-border-dropdown-item-hover;
+      border-color: awsui.$color-border-item-focused;
       border-radius: awsui.$border-item-radius;
 
       &.disabled {
         color: awsui.$color-text-dropdown-item-dimmed;
-        border-color: awsui.$color-border-dropdown-item-dimmed-hover;
         background-color: awsui.$color-background-dropdown-item-dimmed;
+      }
+
+      &:hover {
+        border-color: awsui.$color-border-dropdown-item-hover;
+        &.disabled {
+          border-color: awsui.$color-border-dropdown-item-dimmed-hover;
+        }
       }
     }
   }
@@ -80,11 +86,12 @@
     outline: none;
   }
 
-  /* stylelint-disable-next-line selector-max-type */
+  /* stylelint-disable selector-max-type */
   .has-category-header > &,
   .has-category-header > span > & {
     padding-left: awsui.$space-xxl;
   }
+  /* stylelint-enable selector-max-type */
 }
 
 .icon {

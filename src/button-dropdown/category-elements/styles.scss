@@ -47,13 +47,18 @@ $option-padding-horizontal: awsui.$space-l;
       color: awsui.$color-text-dropdown-item-highlighted;
       // reset padding when adding border back in
       padding: styles.$option-padding-vertical $option-padding-horizontal;
-      border: awsui.$border-item-width solid awsui.$color-border-dropdown-item-hover;
+      border: awsui.$border-item-width solid awsui.$color-border-item-focused;
       border-radius: awsui.$border-item-radius;
       z-index: 2;
       &.disabled {
         background-color: awsui.$color-background-dropdown-item-dimmed;
-        border-color: awsui.$color-border-dropdown-item-dimmed-hover;
         color: awsui.$color-text-dropdown-item-dimmed;
+      }
+      &:hover {
+        border-color: awsui.$color-border-dropdown-item-hover;
+        &.disabled {
+          border-color: awsui.$color-border-dropdown-item-dimmed-hover;
+        }
       }
     }
 

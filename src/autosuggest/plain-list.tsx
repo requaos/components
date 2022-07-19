@@ -101,6 +101,7 @@ const PlainList = (
             data-mouse-target={index}
             enteredTextLabel={enteredTextLabel}
             screenReaderContent={screenReaderContent}
+            isKeyboard={!usingMouse.current}
             {...optionProps}
           />
         );
