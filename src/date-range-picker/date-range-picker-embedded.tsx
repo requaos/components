@@ -37,8 +37,8 @@ export interface DateRangePickerDropdownProps
 export function DateRangePickerEmbedded({
   locale = '',
   startOfWeek,
-  isDateEnabled,
-  isValidRange,
+  isDateEnabled = () => true,
+  isValidRange = () => ({ valid: true }),
   value,
   relativeOptions,
   isSingleGrid,

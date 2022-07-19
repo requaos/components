@@ -51,8 +51,12 @@ export function useDateRangePicker({
   const applyButtonRef = useRef<ButtonProps.Ref>(null);
 
   const [rangeSelectionMode, setRangeSelectionMode] = useState<'absolute' | 'relative'>(
-    getDefaultMode(value, relativeOptions, rangeSelectorMode!)
+    getDefaultMode(value, relativeOptions, rangeSelectorMode)
   );
+
+  useEffect(() => {
+    setRangeSelectionMode(getDefaultMode(value, relativeOptions, rangeSelectorMode));
+  }, [rangeSelectorMode, value, relativeOptions]);
 
   const [selectedAbsoluteRange, setSelectedAbsoluteRange] = useState<DateRangePickerProps.AbsoluteValue | null>(
     value?.type === 'absolute' ? value : null
@@ -108,6 +112,6 @@ export function useDateRangePicker({
 export interface UseDateRangePickerProps {
   value: null | DateRangePickerProps.Value;
   relativeOptions: ReadonlyArray<DateRangePickerProps.RelativeOption>;
-  rangeSelectorMode?: DateRangePickerProps.RangeSelectorMode;
+  rangeSelectorMode: DateRangePickerProps.RangeSelectorMode;
   isValidRange: DateRangePickerProps.ValidationFunction;
 }
