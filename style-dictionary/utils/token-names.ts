@@ -562,7 +562,7 @@ export type SpacingTokenName =
   | 'spaceContainerContentTop'
   | 'spaceContainerHeaderVertical'
   | 'spaceContainerHorizontal'
-  | 'spaceDarkHeaderPaddingBottom'
+  | 'spaceContentHeaderPaddingBottom'
   | 'spaceDarkHeaderOverlapDistance'
   | 'spaceExpandableSectionIconOffsetTop'
   | 'spaceFieldHorizontal'
