@@ -45,6 +45,8 @@ const tokens: StyleDictionary.SpacingDictionary = {
   spaceTableHeaderFocusOutlineGutter: { comfortable: '0px', compact: '-1px' },
   spaceTabsContentTop: '{spaceScaledS}',
   spaceTableHorizontal: '{spaceContainerHorizontal}',
+  spaceTableHorizontalEdge: '0px',
+  spaceTableHorizontalEdgeSelectable: '{spaceL}',
   spaceTableHeaderHorizontal: '0px',
   spaceTableContentBottom: '4px',
   spaceTableContentTop: '{spaceScaledS}',

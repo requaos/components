@@ -11,6 +11,7 @@ interface TableBodyCellProps {
   wrapLines: boolean | undefined;
   isFirstRow: boolean;
   isLastRow: boolean;
+  isSelectable: boolean;
   isSelected: boolean;
   isNextSelected: boolean;
   isPrevSelected: boolean;
@@ -24,6 +25,7 @@ export function TableBodyCell({
   wrapLines,
   isFirstRow,
   isLastRow,
+  isSelectable,
   isSelected,
   isNextSelected,
   isPrevSelected,
@@ -37,6 +39,7 @@ export function TableBodyCell({
         wrapLines && styles['body-cell-wrap'],
         isFirstRow && styles['body-cell-first-row'],
         isLastRow && styles['body-cell-last-row'],
+        isSelectable && styles.selectable,
         isSelected && styles['body-cell-selected'],
         isNextSelected && styles['body-cell-next-selected'],
         isPrevSelected && styles['body-cell-prev-selected']

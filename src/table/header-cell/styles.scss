@@ -26,11 +26,15 @@
     border-bottom: awsui.$space-scaled-xxs solid transparent;
   }
   &:first-child {
-    padding-left: awsui.$space-xs;
+    padding-left: awsui.$space-table-header-horizontal;
+    border-left: awsui.$border-item-width solid transparent;
   }
-  &:last-child,
   &.header-cell-sortable {
-    padding-right: awsui.$space-xs;
+    padding-right: awsui.$space-s;
+  }
+  &:last-child {
+    padding-right: awsui.$space-table-header-horizontal;
+    border-right: awsui.$border-item-width solid transparent;
   }
 
   &:not(:last-child):before {
@@ -57,14 +61,20 @@
 
 .header-cell-content {
   position: relative;
-
   padding: awsui.$space-scaled-xxs awsui.$space-s;
-  .header-cell-sortable > & {
-    padding-right: calc(#{awsui.$space-xl} + #{awsui.$space-xxs});
-  }
+
   &:focus {
     outline: none;
     text-decoration: none;
+  }
+  :first-child > & {
+    padding-left: 0;
+  }
+  .header-cell-sortable > & {
+    padding-right: calc(#{awsui.$space-xl} + #{awsui.$space-xxs});
+  }
+  :last-child:not(.header-cell-sortable) > & {
+    padding-right: 0;
   }
 
   @include focus-visible.when-visible {

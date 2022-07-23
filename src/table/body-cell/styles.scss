@@ -12,8 +12,8 @@ $cell-vertical-padding-w-border: calc(
   #{$cell-vertical-padding} + (#{awsui.$border-item-width} - #{awsui.$border-divider-list-width})
 );
 $cell-horizontal-padding: awsui.$space-scaled-l;
-$cell-edge-horizontal-padding: calc(#{awsui.$space-l} - #{awsui.$border-item-width});
-$cell-horizontal-padding-w-border: calc(#{$cell-edge-horizontal-padding} + #{awsui.$border-item-width});
+$cell-edge-horizontal-padding: calc(#{awsui.$space-table-horizontal-edge-selectable} - #{awsui.$border-item-width});
+$cell-edge-horizontal-padding-unselectable: calc(#{awsui.$space-table-horizontal-edge} - #{awsui.$border-item-width});
 $selected-border: awsui.$border-item-width solid awsui.$color-border-item-selected;
 $selected-border-placeholder: awsui.$border-divider-list-width solid awsui.$color-border-item-placeholder;
 $border-placeholder: awsui.$border-item-width solid transparent;
@@ -31,11 +31,18 @@ $border-placeholder: awsui.$border-item-width solid transparent;
   }
   &:first-child {
     border-left: $border-placeholder;
-    padding-left: $cell-edge-horizontal-padding;
   }
   &:last-child {
     border-right: $border-placeholder;
     padding-right: $cell-edge-horizontal-padding;
+  }
+  &:not(.selectable) {
+    &:first-child {
+      padding-left: $cell-edge-horizontal-padding-unselectable;
+    }
+    &:last-child {
+      padding-right: $cell-edge-horizontal-padding-unselectable;
+    }
   }
   &-first-row {
     border-top: $border-placeholder;

@@ -266,7 +266,11 @@ const InternalTable = React.forwardRef(
                     return (
                       <tr
                         key={getItemKey(trackBy, item, rowIndex)}
-                        className={clsx(styles.row, isSelected && styles['row-selected'])}
+                        className={clsx(
+                          styles.row,
+                          isSelected && styles['row-selected'],
+                          selectionType !== undefined && styles.selectable
+                        )}
                         onFocus={({ currentTarget }) => stickyHeaderRef.current?.scrollToRow(currentTarget)}
                         {...focusMarkers.item}
                         onClick={onRowClickHandler && onRowClickHandler.bind(null, rowIndex, item)}
@@ -278,6 +282,7 @@ const InternalTable = React.forwardRef(
                             isFirstRow={firstVisible}
                             isLastRow={lastVisible}
                             isSelected={isSelected}
+                            isSelectable={true}
                             isNextSelected={isNextSelected}
                             isPrevSelected={isPrevSelected}
                             wrapLines={false}
@@ -307,6 +312,7 @@ const InternalTable = React.forwardRef(
                             wrapLines={wrapLines}
                             isFirstRow={firstVisible}
                             isLastRow={lastVisible}
+                            isSelectable={selectionType !== undefined}
                             isSelected={isSelected}
                             isNextSelected={isNextSelected}
                             isPrevSelected={isPrevSelected}
